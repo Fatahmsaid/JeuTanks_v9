@@ -58,17 +58,17 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
 ## Utilisation
 
 1. Exécutez le jeu :
-1. Avec l'application :
+    1. Avec l'application :
    Double cliquer simplement sur l'icône :
 ![Screenshot from 2025-03-26 02-00-40](https://github.com/user-attachments/assets/5fba8078-17c2-405b-8a44-b2ae752a02be)
 
-2. A l'ancienne :
+    2. Ou à l'ancienne A l'ancienne :
     ```sh
     cd ~/Téléchargements/jeu_tank_v9
     ./tanks
     ```
 
-3. Comment jouer :
+2. Comment jouer :
    1. Menu de sélection des personnages ![Screenshot from 2025-03-26 02-04-36](https://github.com/user-attachments/assets/ab29c188-e02b-4d1e-95af-1550b422d4f8)
 
    2. Sélectionner les personnages avec les flèches directionnelles et entrer : Joueur 1 en rouge, Joueur 2 en bleu
@@ -78,7 +78,7 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
    ![Screenshot from 2025-03-26 02-06-07](https://github.com/user-attachments/assets/0a929bf2-4e41-4ed0-9631-eb4fe773d5cf)
 
 
-   4. JOUER !!!
+    4. JOUER !!!
       - Déplacer votre robot tireur avec les flèches directionnelles
       - Selectionner votre missile en haut à droite
       - Configurer la puissance de projection et l'angle de tir en haut à gauche
