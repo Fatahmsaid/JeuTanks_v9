@@ -10,16 +10,22 @@
 #include <iostream>
 #include <stdexcept>
 
+// Classe principale du menu qui gère la logique et les interaction
 class Game {
 public:
-    Game();
-    void run();
+    Game(); // Constructeur : initialise la fenêtre et charge les ressources nécessaires
+    void run(); // Lance la boucle principale du menu
+
+    // Méthodes pour obtenir les sélections des personnages et de la carte
     std::string getSelectedCharacter1() const;
     std::string getSelectedCharacter2() const;
     std::string getSelectedMap() const;
 
 private:
+    // Enumération pour les différents états du jeu
     enum GameState { START, SELECT, SELECT_MAP, SHOW_MESSAGE };
+
+    // Structure pour représenter un personnage avec ses caractéristiques
     struct Character {
         std::string name;
         int health;
@@ -54,3 +60,4 @@ private:
 };
 
 #endif // GAME_HPP
+

@@ -1,7 +1,8 @@
-#include "Tank.h"
-#include "Terrain.h"
+#include "Tank.hpp"
+#include "Terrain.hpp"
 #include <iostream>
 
+// Constructeur du tank, initialise sa position et sa texture
 Tank::Tank(float x, float y, const std::string& textureFile) : x(x), y(y) {
     if (!texture.loadFromFile(textureFile)) {
         std::cerr << "Erreur : Impossible de charger l'image \"" << textureFile << "\"\n";
@@ -11,39 +12,25 @@ Tank::Tank(float x, float y, const std::string& textureFile) : x(x), y(y) {
     body.setPosition(x, y);
 }
 
-
-// Tank::Tank(float x, float y) : x(x), y(y) {
-//     body.setSize(sf::Vector2f(50, 20));
-//     body.setPosition(x, y);
-//     body.setFillColor(sf::Color::Green);
-// }
-
+// Dessine le tank à l'écran
 void Tank::draw(sf::RenderWindow& window) {
     window.draw(body);
 }
 
-// void Tank::shoot(std::vector<Projectile>& projectiles) {
-//     float angle = 45.0f; // Angle de tir par défaut
-//     float speed = 200.0f; // Vitesse du projectile
-//     projectiles.emplace_back(x + body.getSize().x / 2, y, angle, speed);
-// }
-
-// void Tank::shoot(std::vector<Projectile>& projectiles, float angle, float speed) {
-//     projectiles.emplace_back(x + body.getSize().x / 2, y, angle, speed);
-// }
-
+// Tire un projectile (petit missile)
 void Tank::shoot(std::vector<std::unique_ptr<Projectile>>& projectiles, float angle, float speed) {
     projectiles.emplace_back(std::make_unique<SmallMissile>(x + body.getSize().x / 2, y, angle, speed));
 }
 
 
-
+// Met à jour la position verticale du tank pour qu'il soit au-dessus du terrain
 void Tank::updatePosition(const Terrain& terrain) {
     float terrainHeight = terrain.getHeightAt(x + body.getSize().x / 2);
     y = terrainHeight - body.getSize().y; // Placer le tank juste au-dessus du terrain
     body.setPosition(x, y);
 }
 
+// Déplace le tank horizontalement et ajuste sa position verticale
 void Tank::move(float deltaX, const Terrain& terrain) {
     // Mettre à jour la position horizontale
     x += deltaX;
@@ -84,23 +71,6 @@ void Tank::updateHealthBar(sf::Font& font) {
 }
 
 // Dessine la barre de vie
-// void Tank::drawHealthBar(sf::RenderWindow& window, sf::Font& font) {
-//     window.draw(healthBar);
-//     healthText.setFont(font);
-//     healthText.setString(std::to_string(static_cast<int>(health)) + "%");
-//     healthText.setPosition(healthBar.getPosition().x, healthBar.getPosition().y - 20); 
-//     healthText.setCharacterSize(12);
-
-//     healthBar.setSize(sf::Vector2f(50 * (health / 100.0f), 5));
-//     healthBar.setFillColor(sf::Color::Green);
-//     healthBar.setPosition(body.getPosition().x, body.getPosition().y - 10);
-
-
-
-//     window.draw(healthText);
-// }
-
-//void Tank::drawHealthBar(sf::RenderWindow& window, const sf::Font& font) {
 void Tank::drawHealthBar(sf::RenderWindow& window, sf::Font& font) {
     // Position la barre de vie au-dessus du tank
     float healthBarWidth = 50.0f; // Largeur fixe de la barre
@@ -134,6 +104,7 @@ void Tank::drawHealthBar(sf::RenderWindow& window, sf::Font& font) {
     window.draw(healthText);
 }
 
+// Dessine un indicateur de joueur (triangle rouge) pour montrer le joueur actuel (celui dont c'est le tour de jouer)
 void Tank::drawTurnIndicator(sf::RenderWindow& window) {
     // Créer un triangle rouge
     sf::ConvexShape triangle;

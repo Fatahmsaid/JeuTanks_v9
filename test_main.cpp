@@ -1,10 +1,10 @@
 #define BOOST_TEST_MODULE TanksGameTest
 #include <boost/test/included/unit_test.hpp>
-#include "Tank.h"
-#include "Terrain.h"
-#include "Background.h"
-#include "Slider.h"
-#include "Wind.h"
+#include "Tank.hpp"
+#include "Terrain.hpp"
+#include "Background.hpp"
+#include "Slider.hpp"
+#include "Wind.hpp"
 #include "game.hpp"
 #include <boost/test/tools/interface.hpp>
 #include <boost/test/tools/old/interface.hpp>

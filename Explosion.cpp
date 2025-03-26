@@ -1,12 +1,15 @@
-#include "Explosion.h"
+#include "Explosion.hpp"
 #include <iostream>
 
+// Constructeur de la classe Explosion
+// Initialise une explosion à une position donnée et configure les frames d'animation
 Explosion::Explosion(float x, float y, ExplosionType type)
-    : totalFrames(12), frameDuration(0.05f) { // Par défaut, 6 frames et 0.1s par frame
+    : totalFrames(12), frameDuration(0.05f) { // Selon l'image trouvée, ici 12 frames et 0.05s par frame
     loadExplosionSprite(type);
     sprite.setPosition(x - animationRect.width / 2, y - animationRect.height / 2); // Centrer l'explosion
 }
 
+// Charge la feuille de sprites pour le type d'explosion spécifié
 void Explosion::loadExplosionSprite(ExplosionType type) {
     std::string spriteSheet;
     switch (type) {
@@ -39,7 +42,7 @@ void Explosion::loadExplosionSprite(ExplosionType type) {
     sprite.setTextureRect(animationRect);
 }
 
-
+// Met à jour l'animation en fonction du temps écoulé
 void Explosion::update(float deltaTime) {
     animationTimer += deltaTime;
 
@@ -57,19 +60,14 @@ void Explosion::update(float deltaTime) {
     }
 }
 
-
-
-// void Explosion::draw(sf::RenderWindow& window) {
-//     window.draw(sprite);
-// }
-
+// Dessine l'explosion sur la fenêtre
 void Explosion::draw(sf::RenderWindow& window) {
     std::cout << "Dessiner l'explosion à la position (" 
               << sprite.getPosition().x << ", " << sprite.getPosition().y << ")" << std::endl;
     window.draw(sprite);
 }
 
-
+// Vérifie si l'animation est terminée (toutes les frames ont été jouées)
 bool Explosion::isFinished() const {
     return currentFrame >= totalFrames;
 }

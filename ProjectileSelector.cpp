@@ -1,6 +1,8 @@
-#include "ProjectileSelector.h"
+#include "ProjectileSelector.hpp"
 #include <iostream>
 
+// Constructeur de la classe ProjectileSelector
+// Initialise les projectiles, les icônes, les textes et les flèches de navigation
 ProjectileSelector::ProjectileSelector(float x, float y, sf::Font& font)
     : x(x), y(y), selectedProjectile(0) {
     // Définition des projectiles
@@ -10,17 +12,17 @@ ProjectileSelector::ProjectileSelector(float x, float y, sf::Font& font)
         {"Volcano Bomb", 5, sf::RectangleShape(sf::Vector2f(40, 40))}
     };
 
-    if (!projectiles[0].texture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/small_missile.png")) {
+    if (!projectiles[0].texture.loadFromFile("small_missile.png")) {
         std::cerr << "Erreur : Impossible de charger l'icône du Small Missile\n";
     }
     projectiles[0].icon.setTexture(&projectiles[0].texture);
 
-    if (!projectiles[1].texture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/atomic_bomb.png")) {
+    if (!projectiles[1].texture.loadFromFile("atomic_bomb.png")) {
         std::cerr << "Erreur : Impossible de charger l'icône de l'Atomic Bomb\n";
     }
     projectiles[1].icon.setTexture(&projectiles[1].texture);
 
-    if (!projectiles[2].texture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/volcano_bomb.png")) {
+    if (!projectiles[2].texture.loadFromFile("volcano_bomb.png")) {
         std::cerr << "Erreur : Impossible de charger l'icône du Volcano Bomb\n";
     }
     projectiles[2].icon.setTexture(&projectiles[2].texture);
@@ -46,15 +48,6 @@ ProjectileSelector::ProjectileSelector(float x, float y, sf::Font& font)
         quantityText[i].setPosition(x + 1320, y + 80 + i * 20);
     }
 
-    // Initialisation des flèches
-    // leftArrow.setSize(sf::Vector2f(20, 20));
-    // leftArrow.setFillColor(sf::Color::White);
-    // leftArrow.setPosition(x + 1250 , y + 10);
-
-    // rightArrow.setSize(sf::Vector2f(20, 20));
-    // rightArrow.setFillColor(sf::Color::White);
-    // rightArrow.setPosition(x + 1450, y + 10);
-
     // Flèche gauche (triangle noir)
     leftArrow.setPointCount(3);
     leftArrow.setPoint(0, sf::Vector2f(0, 10));   // Pointe
@@ -76,6 +69,7 @@ ProjectileSelector::ProjectileSelector(float x, float y, sf::Font& font)
     updateTexts();
 }
 
+// Met à jour la sélection du projectile en fonction des clics sur les flèches
 void ProjectileSelector::update(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
         float mouseX = static_cast<float>(event.mouseButton.x);
@@ -93,6 +87,7 @@ void ProjectileSelector::update(sf::Event& event) {
     }
 }
 
+// Affiche le sélecteur de projectiles à l'écran
 void ProjectileSelector::draw(sf::RenderWindow& window) {
     // Dessiner les flèches
     window.draw(leftArrow);
@@ -112,7 +107,7 @@ void ProjectileSelector::draw(sf::RenderWindow& window) {
     window.draw(icon);
 }
 
-
+// Diminue la quantité d'un type de projectile pour un joueur spécifique
 void ProjectileSelector::decrementQuantity(int player, int projectileType) {
     if (playerQuantities[player][projectileType] > 0) {
         playerQuantities[player][projectileType]--;
@@ -120,6 +115,7 @@ void ProjectileSelector::decrementQuantity(int player, int projectileType) {
     }
 }
 
+// Met à jour les textes (nom du projectile et quantités restantes)
 void ProjectileSelector::updateTexts() {
     // Mettre à jour le nom
     nameText.setString(projectiles[selectedProjectile].name);
@@ -130,3 +126,4 @@ void ProjectileSelector::updateTexts() {
                                   std::to_string(playerQuantities[i][selectedProjectile]));
     }
 }
+

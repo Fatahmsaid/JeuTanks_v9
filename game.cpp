@@ -2,11 +2,13 @@
 #include <iostream>
 #include <stdexcept>
 
+// Constructeur de la classe Game
+// Initialise la fenêtre, charge les ressources, et configure les éléments nécessaires au jeu
 Game::Game() : window(sf::VideoMode(800, 600), "ROBOTS WAR"), state(START), selectedIndex1(0), selectedIndex2(0), selectedMapIndex(0), currentPlayer(1) {
     if (!font.loadFromFile("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")) {
         throw std::runtime_error("Impossible de charger la police.");
     }
-    if (!backgroundTexture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/fond_decran.png")) {
+    if (!backgroundTexture.loadFromFile("fond_decran.png")) {
         throw std::runtime_error("Impossible de charger l'image de fond.");
     }
     backgroundSprite.setTexture(backgroundTexture);
@@ -16,6 +18,7 @@ Game::Game() : window(sf::VideoMode(800, 600), "ROBOTS WAR"), state(START), sele
     loadMaps();
 }
 
+// Configure le bouton de démarrage (position, style, etc)
 void Game::setupStartButton() {
     startButton.setFont(font);
     startButton.setString("Start");
@@ -28,9 +31,8 @@ void Game::setupStartButton() {
     simpleRectangle.setFillColor(sf::Color(255, 255, 255, 200)); // Semi-transparente
 }
 
-void Game::loadCharacters() {
-    
-      
+// Charge les informations sur les personnages (images, statistiques, etc)
+void Game::loadCharacters() {  
     int spacingX = 200;
     int startY = 250;
     
@@ -44,7 +46,7 @@ void Game::loadCharacters() {
     // Charger et définir les informations pour chaque personnage manuellement
     // Personnage 1
     sf::Texture texture1;
-    if (!texture1.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/personnage1.png")) {
+    if (!texture1.loadFromFile("personnage1.png")) {
         throw std::runtime_error("Impossible de charger l'image personnage1.png");
     }
     textures.push_back(texture1);
@@ -68,7 +70,7 @@ backgrounds.push_back(background1);
 
     // Personnage 2
     sf::Texture texture2;
-    if (!texture2.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/personnage2.png")) {
+    if (!texture2.loadFromFile("personnage2.png")) {
         throw std::runtime_error("Impossible de charger l'image personnage2.png");
     }
     textures2.push_back(texture2);
@@ -92,7 +94,7 @@ backgrounds.push_back(background1);
 
     // Personnage 3
     sf::Texture texture3;
-    if (!texture3.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/personnage3.png")) {
+    if (!texture3.loadFromFile("personnage3.png")) {
         throw std::runtime_error("Impossible de charger l'image personnage3.png");
     }
     textures3.push_back(texture3);
@@ -116,10 +118,9 @@ backgrounds.push_back(background1);
     backgrounds.push_back(background3);
 }
 
-void Game::loadMaps() {
-    
-    
 
+// Charge les différentes maps
+void Game::loadMaps() {
         
     title2.setFont(font);
     title2.setString("Selection des maps");
@@ -146,7 +147,7 @@ void Game::loadMaps() {
     MapStats.push_back(stats5);
 
     sf::Texture texture6;
-        if (!texture6.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/map1.png")) {
+        if (!texture6.loadFromFile("map1.png")) {
             throw std::runtime_error("Impossible de charger l'image map2.png");
         }
         mapTextures.push_back(texture6);
@@ -156,7 +157,7 @@ void Game::loadMaps() {
 
         // Charger la première carte
         sf::Texture texture4;
-        if (!texture4.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/map2.png")) {
+        if (!texture4.loadFromFile("map2.png")) {
             throw std::runtime_error("Impossible de charger l'image map1.png");
         }
         mapTextures2.push_back(texture4);
@@ -164,9 +165,9 @@ void Game::loadMaps() {
         sprite3.setPosition(450, 230);  // Position de la première carte
         maps.push_back(sprite3);
     
-
 }
 
+// Gère l'interaction avec l'utilisateur et les inputs outputs
 void Game::handleEvents() {
     sf::Event event;
     while (window.pollEvent(event)) {
@@ -205,6 +206,7 @@ void Game::handleEvents() {
     }
 }
 
+// Gère l'affichage et configure les éléments graphiques nécessaires au menu
 void Game::render() {
     window.clear();
     window.draw(backgroundSprite);
@@ -250,21 +252,27 @@ void Game::render() {
     window.display();
 }
 
+// Retourne la sélection de personnage du joueur 1
 std::string Game::getSelectedCharacter1() const {
     return selectedCharacter1;
 }
 
+// Retourne la sélection de personnage du joueur 2
 std::string Game::getSelectedCharacter2() const {
     return selectedCharacter2;
 }
 
+// Retourne la map sélectionnée
 std::string Game::getSelectedMap() const {
     return selectedMap;
 }
 
+// Lance le jeu
 void Game::run() {
     while (window.isOpen()) {
         handleEvents();
         render();
     }
 }
+
+

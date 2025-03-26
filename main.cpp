@@ -3,28 +3,30 @@
 #include <vector>
 #include <memory>
 #include <iostream>
-#include "Tank.h"
-#include "Projectile.h"
-#include "Terrain.h"
-#include "Background.h"
-#include "Slider.h"
-#include "ProjectileSelector.h" 
-#include "Explosion.h"
-#include "Wind.h"
+#include "Tank.hpp"
+#include "Projectile.hpp"
+#include "Terrain.hpp"
+#include "Background.hpp"
+#include "Slider.hpp"
+#include "ProjectileSelector.hpp" 
+#include "Explosion.hpp"
+#include "Wind.hpp"
 #include "game.hpp"
 #include <filesystem>
 
 
 
 int main() {
+
+    // Charge les musiques de fond
     sf::Music music1;
-    if (!music1.openFromFile("/home/fatah/Téléchargements/JeuTanks_v9/Gran_Turismo_4_1.ogg")) { // Remplacez par le chemin de votre premier fichier audio
+    if (!music1.openFromFile("Gran_Turismo_4_1.ogg")) { // Remplacez par le chemin de votre premier fichier audio
         std::cerr << "Erreur lors du chargement du premier fichier audio." << std::endl;
         return -1;
     }
 
     sf::Music music2;
-    if (!music2.openFromFile("/home/fatah/Téléchargements/JeuTanks_v9/gow.ogg")) { // Remplacez par le chemin de votre premier fichier audio
+    if (!music2.openFromFile("gow.ogg")) { // Remplacez par le chemin de votre premier fichier audio
         std::cerr << "Erreur lors du chargement du premier fichier audio." << std::endl;
         return -1;
     }
@@ -33,7 +35,7 @@ int main() {
     music1.play();
     std::cout << "Première musique en cours de lecture... Appuyez sur Enter pour arrêter et charger une nouvelle musique." << std::endl;
 
-
+    // Démarre le menu
     Game game;
     game.run();
 
@@ -48,7 +50,7 @@ int main() {
     music2.play();
     std::cout << "Deuxième musique en cours de lecture... Appuyez sur Enter pour arrêter et charger une nouvelle musique." << std::endl;
 
-
+    // Démarre le jeu
     sf::RenderWindow window(sf::VideoMode(1600, 1000), "Tanks Game", sf::Style::Close);
     window.setFramerateLimit(60);
 
@@ -57,11 +59,11 @@ int main() {
     std::string backgroundFile;
 
     if (selectedMap == "Carte: Map 1") {
-        backgroundFile = "/home/fatah/Téléchargements/JeuTanks_v9/map11.png";  // Fichier correspondant à la Map 1
+        backgroundFile = "map11.png";  // Fichier correspondant à la Map 1
     } else if (selectedMap == "Carte: Map 2") {
-        backgroundFile = "/home/fatah/Téléchargements/JeuTanks_v9/map22.png";  // Fichier correspondant à la Map 2
+        backgroundFile = "map22.png";  // Fichier correspondant à la Map 2
     } else {
-        backgroundFile = "/home/fatah/Téléchargements/JeuTanks_v9/background.png";  // Valeur par défaut au cas où
+        backgroundFile = "background.png";  // Valeur par défaut au cas où
     }
 
     // Charger l'arrière-plan en fonction de la sélection
@@ -96,23 +98,23 @@ int main() {
     std::string enemyTankFile;
 
     if (selectedCharacter1 == "Joueur 1: Personnage 1") {
-        playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_elyes.png";  // Tank correspondant à E-Lyes
+        playerTankFile = "tank_elyes.png";  // Tank correspondant à E-Lyes
     } else if (selectedCharacter1 == "Joueur 1: Personnage 2") {
-        playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_fatator.png";  // Tank correspondant à Fatator
+        playerTankFile = "tank_fatator.png";  // Tank correspondant à Fatator
     } else if (selectedCharacter1 == "Joueur 1: Personnage 3") {
-        playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_nacimus.png";  // Tank correspondant à Nacimus Prime
+        playerTankFile = "tank_nacimus.png";  // Tank correspondant à Nacimus Prime
     } else {
-        playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/player_tank.png";  // Valeur par défaut
+        playerTankFile = "player_tank.png";  // Valeur par défaut
     }
 
     if (selectedCharacter2 == "Joueur 2: Personnage 1") {
-        enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_elyes.png";  
+        enemyTankFile = "tank_elyes.png";  
     } else if (selectedCharacter2 == "Joueur 2: Personnage 2") {
-        enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_fatator.png";  
+        enemyTankFile = "tank_fatator.png";  
     } else if (selectedCharacter2 == "Joueur 2: Personnage 3") {
-        enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_nacimus.png";  
+        enemyTankFile = "tank_nacimus.png";  
     } else {
-        enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/enemy_tank.png";  // Valeur par défaut
+        enemyTankFile = "enemy_tank.png";  // Valeur par défaut
     }
 
     // Charger les tanks avec les textures sélectionnées
@@ -145,7 +147,7 @@ int main() {
 
     // Charger la texture de la flèche
     sf::Texture arrowTexture;
-    if (!arrowTexture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/fleche.png")) {
+    if (!arrowTexture.loadFromFile("fleche.png")) {
     std::cerr << "Erreur : Impossible de charger la texture de la flèche." << std::endl;
     return -1;
     }
@@ -318,6 +320,7 @@ int main() {
             window.close();
         }
 
+        // Met à jour les positions des joueurs
         playerTank.updatePosition(terrain);
         enemyTank.updatePosition(terrain);
 

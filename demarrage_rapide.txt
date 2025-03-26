@@ -1,0 +1,9 @@
+DEMARRAGE RAPIDE:
+
+SUR TERMINAL:
+
+cd JeuTanks_v10
+
+make
+
+./tanks

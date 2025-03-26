@@ -1,11 +1,12 @@
-#include "Wind.h"
+#include "Wind.hpp"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 
+// Constructeur de la classe Wind
 Wind::Wind(float x, float y, sf::Font& font) : x(x), y(y) {
     // Charger l'icône du vent
-    if (!windTexture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/wind_icon.png")) {
+    if (!windTexture.loadFromFile("wind_icon.png")) {
         std::cerr << "Erreur : Impossible de charger l'icône du vent\n";
     }
     windIcon.setTexture(windTexture);
@@ -26,9 +27,10 @@ Wind::Wind(float x, float y, sf::Font& font) : x(x), y(y) {
     windArrow.setFillColor(sf::Color::White);
     windArrow.setPosition(x + 990, y + 40);
 
-    generateWind();
+    generateWind(); // Générer une direction et une vitesse de vent
 }
 
+// Génère une nouvelle direction et vitesse pour le vent
 void Wind::generateWind() {
     // Générer une vitesse entre 10 et 100 km/h
     speed = static_cast<float>((10 + rand() % 91)/100);
@@ -50,10 +52,12 @@ void Wind::generateWind() {
     }
 }
 
+// Retourne un multiplicateur pour ajuster la vitesse du vent en fonction de la direction
 float Wind::getMultiplier() const {
     return direction ? 1.0f + (speed / 100.0f) : 1.0f - (speed / 100.0f);
 }
 
+// Dessine l'icône du vent, le texte et la flèche sur la fenêtre
 void Wind::draw(sf::RenderWindow& window) const {
     window.draw(windIcon);
     window.draw(windText);

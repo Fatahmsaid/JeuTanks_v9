@@ -1,9 +1,9 @@
-#include "Projectile.h"
+#include "Projectile.hpp"
 #include <cmath>
 #include <iostream>
 
 // Constantes globales
-const float GRAVITY = 500.0f;
+const float GRAVITY = 500.0f; // Gravité, à modifier selon ressenti du gameplay
 
 // Classe de base Projectile
 Projectile::Projectile(float x, float y, float angle, float speed)
@@ -16,6 +16,7 @@ Projectile::Projectile(float x, float y, float angle, float speed)
     shape.setPosition(x, y);
 }
 
+// Met à jour la trajectoire du projectile
 void Projectile::update(float deltaTime) {
     x += vx * deltaTime * 2;
     y += vy * deltaTime * 2;
@@ -23,18 +24,22 @@ void Projectile::update(float deltaTime) {
     shape.setPosition(x, y);
 }
 
+// Dessine le projectile
 void Projectile::draw(sf::RenderWindow& window) {
     window.draw(shape);
 }
 
+// Détermine si le projectile sors de l'écran
 bool Projectile::isOffScreen(int screenWidth, int screenHeight) const {
     return x < 0 || x > screenWidth || y > screenHeight;
 }
 
+// Applique l'effet du vent
 void Projectile::applyWindEffect(float multiplier) {
     vx *= multiplier;
 }
 
+// Classes dérivées de Projectile:
 
 // SmallMissile
 SmallMissile::SmallMissile(float x, float y, float angle, float speed)
