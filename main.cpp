@@ -117,7 +117,7 @@ int main() {
 
     // Charger les tanks avec les textures sélectionnées
     Tank playerTank(100, 500, playerTankFile);
-    Tank enemyTank(500, 500, enemyTankFile);
+    Tank enemyTank(1200, 500, enemyTankFile);
 
 
     // Initialiser le terrain et les projectiles
