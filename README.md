@@ -31,6 +31,21 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
     ```sh
     make
     ```
+3. Mettre l'icoe de l'application sur votre Bureau
+   a. Vos dossier sont en français :
+   ```sh
+   cp ~/Téléchargements/robot_tank.desktop ~/Bureau/
+   ```
+   b. Vos dossier sont en anglais :
+   ```sh
+   cp ~/Downloads/robot_tank.desktop ~/Desktop/
+   ```
+
+4. Dans tous les fichier .cpp, Changez le chemin des .png avec le chemin de votre racine système
+   Exemple avec  "Wind.cpp"   Rempcalacer : if (!windTexture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/wind_icon.png"))
+                               Par : Rempcalacer : if (!windTexture.loadFromFile("/home/votre_nom/Téléchargements/JeuTanks_v9/wind_icon.png"))
+
+   
 
 ## Utilisation
 
