@@ -8,6 +8,7 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
 - Sélection de cartes avec des terrains variés
 - Gestion du vent influençant la trajectoire des projectiles
 - Différents types de projectiles avec des effets variés
+- Prise en compte des efforts mécaniques (gravité, vent).
 - Barre de vie pour les tanks
 - Indicateur de tour pour le joueur actif
 - Musique de fond changeante
@@ -31,21 +32,16 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
     ```sh
     make
     ```
-<<<<<<< HEAD
+
+
+## Si vous voulez jouer avec l'application
 3. Mettre l'icoe de l'application sur votre Bureau
    1. Si vos dossiers sont en français :
    ```sh
    cp ~/Téléchargements/robot_tank.desktop ~/Bureau/
    ```
-   2. S vos dossiers sont en anglais :
-=======
-3. Mettre l'icone de l'application sur votre Bureau
-   1. Vos dossiers sont en français :
-   ```sh
-   cp ~/Téléchargements/robot_tank.desktop ~/Bureau/
-   ```
-   2. Vos dossiers sont en anglais :
->>>>>>> b8772a0 (oui)
+   2. Si vos dossiers sont en anglais :
+      
    ```sh
    cp ~/Downloads/robot_tank.desktop ~/Desktop/
    ```
