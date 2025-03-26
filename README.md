@@ -58,13 +58,19 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
 ## Utilisation
 
 1. Exécutez le jeu :
+   a. Avec l'application :
+   Double cliquer simplement sur l'icône :
+    ![Screenshot from 2025-03-26 02-00-40](https://github.com/user-attachments/assets/459e25ac-9a3c-4aaa-856a-ed626723518b)
+
+   b. A l'ancienne :
     ```sh
+    cd ~/Téléchargements/jeu_tank_v9
     ./tanks
     ```
 
-2. Suivez les instructions à l'écran pour sélectionner vos personnages et la carte.
+3. Suivez les instructions à l'écran pour sélectionner vos personnages et la carte.
 
-3. Utilisez les touches fléchées pour déplacer votre tank et la barre d'espace pour tirer.
+4. Utilisez les touches fléchées pour déplacer votre tank et la barre d'espace pour tirer.
 
 ## Structure du Projet
 
