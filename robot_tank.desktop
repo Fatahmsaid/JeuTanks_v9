@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Robot_tank
+Comment=Exécuter le programme C++
+Exec=/home/fatah/Téléchargements/JeuTanks_v9/tanks
+Icon=/home/fatah/Téléchargements/JeuTanks_v9/enemy_tank.png
+Terminal=true
+Type=Application
+Categories=Utility;
