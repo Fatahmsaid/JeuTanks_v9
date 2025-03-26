@@ -42,8 +42,16 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
    ```
 
 4. Dans tous les fichier .cpp, Changez le chemin des .png avec le chemin de votre racine système
-   Exemple avec  "Wind.cpp"   Rempcalacer : if (!windTexture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/wind_icon.png"))
-                               Par : Rempcalacer : if (!windTexture.loadFromFile("/home/votre_nom/Téléchargements/JeuTanks_v9/wind_icon.png"))
+   Exemple avec  "Wind.cpp"
+   Remplacer :
+   ```sh
+   if (!windTexture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/wind_icon.png"))
+   ```
+   Par :
+   ```sh
+   if (!windTexture.loadFromFile("/home/votre_nom/Téléchargements/JeuTanks_v9/wind_icon.png"))
+   ```
+   => Promis : Une version arrive avec l'automatisation de cette tache
 
    
 
