@@ -118,7 +118,7 @@ int main() {
     // Charger les tanks avec les textures sélectionnées
     Tank playerTank(100, 500, playerTankFile);
     Tank enemyTank(500, 500, enemyTankFile);
-    
+
 
     // Initialiser le terrain et les projectiles
     Terrain terrain(1600, 1000, 800, game.getSelectedMap());
@@ -140,6 +140,23 @@ int main() {
     int currentPlayer = 1; // 1 pour Player 1, 2 pour Player 2
 
     //std::cout << "Répertoire de travail actuel : " << std::filesystem::current_path() << std::endl; //Debug sprites
+
+
+
+    // Charger la texture de la flèche
+    sf::Texture arrowTexture;
+    if (!arrowTexture.loadFromFile("/home/fatah/Téléchargements/JeuTanks_v9/fleche.png")) {
+    std::cerr << "Erreur : Impossible de charger la texture de la flèche." << std::endl;
+    return -1;
+    }
+
+    // Créer le sprite de la flèche
+    sf::Sprite arrowSprite;
+    arrowSprite.setTexture(arrowTexture);
+    arrowSprite.setOrigin(arrowTexture.getSize().x / 2, arrowTexture.getSize().y / 2); // Origine au centre de la flèche
+
+    // Définir la position fixe de la flèche
+    arrowSprite.setPosition(160, 200); 
 
     while (window.isOpen()) {
         sf::Event event;
@@ -194,6 +211,10 @@ int main() {
             }
 
         }
+
+        // Mettre à jour la rotation de la flèche en fonction de l'angle sélectionné
+        float angle = angleSlider.value;
+        arrowSprite.setRotation(angle + 180);
 
         // Gérer le déplacement des tanks
         if (playerTurn) {
@@ -314,6 +335,10 @@ int main() {
         } else {
             enemyTank.drawTurnIndicator(window);
         }
+
+
+        // Dessiner le sprite de la flèche
+        window.draw(arrowSprite);
 
         // Dessiner les projectiles
         for (auto& projectile : projectiles) {
