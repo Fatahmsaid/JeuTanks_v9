@@ -32,11 +32,11 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
     make
     ```
 3. Mettre l'icoe de l'application sur votre Bureau
-   a. Vos dossier sont en français :
+   1. Vos dossier sont en français :
    ```sh
    cp ~/Téléchargements/robot_tank.desktop ~/Bureau/
    ```
-   b. Vos dossier sont en anglais :
+   2. Vos dossier sont en anglais :
    ```sh
    cp ~/Downloads/robot_tank.desktop ~/Desktop/
    ```
