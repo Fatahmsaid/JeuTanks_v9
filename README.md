@@ -60,7 +60,7 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
 1. Exécutez le jeu :
    a. Avec l'application :
    Double cliquer simplement sur l'icône :
-    ![Screenshot from 2025-03-26 02-00-40](https://github.com/user-attachments/assets/459e25ac-9a3c-4aaa-856a-ed626723518b)
+![Screenshot from 2025-03-26 02-00-40](https://github.com/user-attachments/assets/5fba8078-17c2-405b-8a44-b2ae752a02be)
 
    b. A l'ancienne :
     ```sh
@@ -69,11 +69,14 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
     ```
 
 3. Comment jouer :
-   1. Menu de sélection des personnages![Screenshot from 2025-03-26 02-04-36](https://github.com/user-attachments/assets/862fa690-cc77-4334-ba08-0a9d80a73e2c)
+   1. Menu de sélection des personnages ![Screenshot from 2025-03-26 02-04-36](https://github.com/user-attachments/assets/ab29c188-e02b-4d1e-95af-1550b422d4f8)
+
    2. Sélectionner les personnages avec les flèches directionnelles et entrer : Joueur 1 en rouge, Joueur 2 en bleu
-   ![image](https://github.com/user-attachments/assets/9e05b087-2a17-44bf-974c-be38ee391d17)
+   ![Screenshot from 2025-03-26 02-05-05](https://github.com/user-attachments/assets/da431650-fe20-48c7-86d2-b21059b21204)
+
    3. Sélectionner la map souhaitée
-   ![image](https://github.com/user-attachments/assets/d7e9c555-06fc-4816-b9ec-02b7b2f7d4d3)
+   ![Screenshot from 2025-03-26 02-06-07](https://github.com/user-attachments/assets/0a929bf2-4e41-4ed0-9631-eb4fe773d5cf)
+
 
    4. JOUER !!!
       - Déplacer votre robot tireur avec les flèches directionnelles
@@ -81,7 +84,8 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
       - Configurer la puissance de projection et l'angle de tir en haut à gauche
       - Attention : faut prenre en compte la vitesse du vent
       - Quand vous être prêt, appuyer sur "Space" pour exploser votre adversaire"
-   ![image](https://github.com/user-attachments/assets/e9df1b6e-1d32-4274-890a-f5c6b87fb5d7)
+   ![Screenshot from 2025-03-26 02-06-45](https://github.com/user-attachments/assets/359ccf6a-a426-45bd-925e-e74a0985d949)
+
 
 
 
