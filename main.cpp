@@ -254,8 +254,8 @@ int main() {
             }
 
             // Collision avec les tanks
-            if ((*it)->getX() >= playerTank.getX() && (*it)->getX() <= playerTank.getX() + 50 &&
-                (*it)->getY() >= playerTank.getY() && (*it)->getY() <= playerTank.getY() + 20) {
+            if ((*it)->getX() >= playerTank.getX() && (*it)->getX() <= playerTank.getX() + 90 &&
+                (*it)->getY() >= playerTank.getY() && (*it)->getY() <= playerTank.getY() + 60) {
                 // Créer une explosion à l'impact
                 explosions.emplace_back(
                     (*it)->getX(),
@@ -268,8 +268,8 @@ int main() {
                 continue;
             }
 
-            if ((*it)->getX() >= enemyTank.getX() && (*it)->getX() <= enemyTank.getX() + 50 &&
-                (*it)->getY() >= enemyTank.getY() && (*it)->getY() <= enemyTank.getY() + 20) {
+            if ((*it)->getX() >= enemyTank.getX() && (*it)->getX() <= enemyTank.getX() + 90 &&
+                (*it)->getY() >= enemyTank.getY() && (*it)->getY() <= enemyTank.getY() + 60) {
                 // Créer une explosion à l'impact
                 explosions.emplace_back(
                     (*it)->getX(),
