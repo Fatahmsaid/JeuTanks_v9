@@ -57,11 +57,11 @@ int main() {
     std::string backgroundFile;
 
     if (selectedMap == "Carte: Map 1") {
-        backgroundFile = "map11.png";  // Fichier correspondant à la Map 1
+        backgroundFile = "/home/fatah/Téléchargements/JeuTanks_v9/map11.png";  // Fichier correspondant à la Map 1
     } else if (selectedMap == "Carte: Map 2") {
-        backgroundFile = "map22.png";  // Fichier correspondant à la Map 2
+        backgroundFile = "/home/fatah/Téléchargements/JeuTanks_v9/map22.png";  // Fichier correspondant à la Map 2
     } else {
-        backgroundFile = "background.png";  // Valeur par défaut au cas où
+        backgroundFile = "/home/fatah/Téléchargements/JeuTanks_v9/background.png";  // Valeur par défaut au cas où
     }
 
     // Charger l'arrière-plan en fonction de la sélection
@@ -96,23 +96,23 @@ int main() {
     std::string enemyTankFile;
 
     if (selectedCharacter1 == "Joueur 1: Personnage 1") {
-        playerTankFile = "tank_elyes.png";  // Tank correspondant à E-Lyes
+        playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_elyes.png";  // Tank correspondant à E-Lyes
     } else if (selectedCharacter1 == "Joueur 1: Personnage 2") {
-        playerTankFile = "tank_fatator.png";  // Tank correspondant à Fatator
+        playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_fatator.png";  // Tank correspondant à Fatator
     } else if (selectedCharacter1 == "Joueur 1: Personnage 3") {
-        playerTankFile = "tank_nacimus.png";  // Tank correspondant à Nacimus Prime
+        playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_nacimus.png";  // Tank correspondant à Nacimus Prime
     } else {
-        playerTankFile = "player_tank.png";  // Valeur par défaut
+        playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/player_tank.png";  // Valeur par défaut
     }
 
     if (selectedCharacter2 == "Joueur 2: Personnage 1enemy") {
-        enemyTankFile = "tank_elyes.png";  
+        enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_elyes.png";  
     } else if (selectedCharacter2 == "Joueur 2: Personnage 2") {
-        enemyTankFile = "tank_fatator.png";  
+        enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_fatator.png";  
     } else if (selectedCharacter2 == "Joueur 2: Personnage 3") {
-        enemyTankFile = "tank_nacimus.png";  
+        enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_nacimus.png";  
     } else {
-        enemyTankFile = "enemy_tank.png";  // Valeur par défaut
+        enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/enemy_tank.png";  // Valeur par défaut
     }
 
     // Charger les tanks avec les textures sélectionnées
