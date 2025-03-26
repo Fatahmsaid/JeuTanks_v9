@@ -72,7 +72,7 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
    1. Menu de sélection des personnages![Screenshot from 2025-03-26 02-04-36](https://github.com/user-attachments/assets/862fa690-cc77-4334-ba08-0a9d80a73e2c)
    2. Sélectionner les personnages avec les flèches directionnelles et entrer : Joueur 1 en rouge, Joueur 2 en bleu
    ![image](https://github.com/user-attachments/assets/9e05b087-2a17-44bf-974c-be38ee391d17)
-   3.Sélectionner la map souhaitée
+   3. Sélectionner la map souhaitée
    ![image](https://github.com/user-attachments/assets/d7e9c555-06fc-4816-b9ec-02b7b2f7d4d3)
 
    4. JOUER !!!
