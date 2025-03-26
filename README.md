@@ -106,6 +106,10 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
 - `Wind.h` et `Wind.cpp` : Gestion du vent
 - `game.hpp` et `game.cpp` : Gestion de la logique de sélection des personnages et des cartes
 
+## Diagramme UML
+![diagramme](https://github.com/user-attachments/assets/16757ec2-372a-4b3a-b84f-0c3fc9475713)
+
+
 ## Tests
 1. Boost.Test (ok)
 2. Valgrind : Pas d'erreurs majeurs (donc conforme au CdC).
