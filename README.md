@@ -125,7 +125,7 @@ Ce projet est un jeu de Robot tank développé en C++ utilisant la bibliothèque
 
 ## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Libre d'accès à tout le monde.
 
 ## Remerciements
 
