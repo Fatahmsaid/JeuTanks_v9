@@ -58,7 +58,7 @@ BOOST_AUTO_TEST_CASE(test_generateWind) {
     // Tester la vitesse du vent
     BOOST_CHECK(wind.getMultiplier() > 0); // Le multiplicateur doit être supérieur à 0
 
-    // Tester que la direction est correcte (il faut que ce soit soit 1.0f + vitesse, soit 1.0f - vitesse)
+    // Tester que la direction est correcte 
     float multiplier = wind.getMultiplier();
     BOOST_CHECK(multiplier == 1.0f + (wind.getMultiplier() - 1.0f) / 100.0f || multiplier == 1.0f - (wind.getMultiplier() - 1.0f) / 100.0f);
 }
@@ -73,8 +73,8 @@ BOOST_AUTO_TEST_CASE(test_wind_direction) {
     Wind wind(0, 0, font);
     wind.generateWind();
 
-    // Tester si la direction est correcte (booléen, vrai ou faux)
-    bool direction = wind.getMultiplier() > 1.0f; // direction droite si multiplier > 1.0
+    // Tester si la direction est correcte (vrai ou faux)
+    bool direction = wind.getMultiplier() > 1.0f; 
     BOOST_CHECK(direction == (wind.getMultiplier() > 1.0f));
 }
 
@@ -83,7 +83,6 @@ BOOST_AUTO_TEST_CASE(test_wind_direction) {
 
 // Tests pour la classe Slider
 BOOST_AUTO_TEST_CASE(test_slider_value_update) {
-    // Charger la police pour le texte
     sf::Font font;
     if (!font.loadFromFile("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")) {
         BOOST_FAIL("Erreur de chargement de la police");
@@ -95,21 +94,21 @@ BOOST_AUTO_TEST_CASE(test_slider_value_update) {
     // Simuler un événement de pression du bouton de la souris
     sf::Event event;
     event.type = sf::Event::MouseButtonPressed;
-    event.mouseButton.x = 150;  // Position initiale du curseur
+    event.mouseButton.x = 150;  
     event.mouseButton.y = 105;
     slider.update(event);  // Appeler la méthode update pour simuler l'appui
 
     // Simuler un mouvement de la souris
     event.type = sf::Event::MouseMoved;
-    event.mouseMove.x = 200;  // Déplacer le curseur
-    slider.update(event);  // Appeler la méthode update pour simuler le déplacement
+    event.mouseMove.x = 200;  
+    slider.update(event); 
 
     // Vérifier que la valeur du slider a changé
     BOOST_CHECK(slider.value > 0.f);  // La valeur doit être plus grande que zéro
     BOOST_CHECK(slider.value <= 100.f);  // La valeur ne doit pas dépasser 100
 }
 
-// Test
+// Test pour la classe explosion
 BOOST_AUTO_TEST_CASE(test_explosion_public_methods)
 {
     // Création d'une explosion à la position (100, 100) de type SmallMissile
@@ -124,7 +123,7 @@ BOOST_AUTO_TEST_CASE(test_explosion_public_methods)
     // L'explosion ne devrait toujours pas être terminée
     BOOST_CHECK_EQUAL(explosion.isFinished(), false);
 
-    // Simule 12 mises à jour (ce qui devrait faire l'animation complète)
+    // Simule 12 mises à jour 
     for (int i = 0; i < 12; ++i) {
         explosion.update(0.1f);  // Simulation de chaque frame
     }

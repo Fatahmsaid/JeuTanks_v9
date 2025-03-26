@@ -6,7 +6,7 @@ Tank::Tank(float x, float y, const std::string& textureFile) : x(x), y(y) {
     if (!texture.loadFromFile(textureFile)) {
         std::cerr << "Erreur : Impossible de charger l'image \"" << textureFile << "\"\n";
     }
-    body.setSize(sf::Vector2f(50, 20));
+    body.setSize(sf::Vector2f(90, 60));
     body.setTexture(&texture); // Applique la texture
     body.setPosition(x, y);
 }
@@ -104,10 +104,10 @@ void Tank::updateHealthBar(sf::Font& font) {
 void Tank::drawHealthBar(sf::RenderWindow& window, sf::Font& font) {
     // Position la barre de vie au-dessus du tank
     float healthBarWidth = 50.0f; // Largeur fixe de la barre
-    float healthBarHeight = 5.0f; // Hauteur fixe de la barre
+    float healthBarHeight = 10.0f; // Hauteur fixe de la barre
 
     // Calcul de la position de la barre (au-dessus du corps du tank)
-    sf::Vector2f healthBarPos(body.getPosition().x - healthBarWidth / 2, body.getPosition().y - 20);
+    sf::Vector2f healthBarPos(25+body.getPosition().x - healthBarWidth / 2, body.getPosition().y - 20);
 
     // Ajuste la taille de la barre en fonction de la santé
     sf::RectangleShape healthBarBackground(sf::Vector2f(healthBarWidth, healthBarHeight));

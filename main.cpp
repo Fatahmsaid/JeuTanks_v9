@@ -83,7 +83,7 @@ int main() {
 
     // Créer les sliders pour la vitesse et l'angle
     Slider speedSlider(50, 50, 200, 100, 800, "Power", font); // Speed MinValue = 100 MaxValue = 800
-    Slider angleSlider(50, 100, 200, 0, 180, "Angle", font);
+    Slider angleSlider(50, 100, 200, 180, 0, "Angle", font);
 
     // Ajouter le sélecteur de type de projectile
     ProjectileSelector selector(10, 10, font);
@@ -105,7 +105,7 @@ int main() {
         playerTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/player_tank.png";  // Valeur par défaut
     }
 
-    if (selectedCharacter2 == "Joueur 2: Personnage 1enemy") {
+    if (selectedCharacter2 == "Joueur 2: Personnage 1") {
         enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_elyes.png";  
     } else if (selectedCharacter2 == "Joueur 2: Personnage 2") {
         enemyTankFile = "/home/fatah/Téléchargements/JeuTanks_v9/tank_fatator.png";  
@@ -214,7 +214,7 @@ int main() {
 
         // Mettre à jour la rotation de la flèche en fonction de l'angle sélectionné
         float angle = angleSlider.value;
-        arrowSprite.setRotation(angle + 180);
+        arrowSprite.setRotation(-angle);
 
         // Gérer le déplacement des tanks
         if (playerTurn) {
